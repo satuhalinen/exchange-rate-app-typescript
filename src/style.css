@@ -171,8 +171,12 @@ label {
 }
 
 input:not(.btn) {
-  font-size: 16px;
-  margin-bottom: 1.7em;
+  font-size: 30px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
   padding: 0.75em 0.5em;
   background-color: white;
   width: 100%;
@@ -246,6 +250,9 @@ button {
   background-color: var(--neutral-5);
   padding: 40px 20px;
   margin-top: 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 #footer-wrapper a {
@@ -259,15 +266,15 @@ select {
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    place-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  place-items: center;
 }
 
 .result-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    place-items: center;
-    font-size: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  font-size: 30px;
 }

@@ -91,14 +91,24 @@ fetchWrapper
 baseCurrency?.addEventListener("change", getConversionRates);
 // Add an event listener to the target element that invokes the getConversionRates function when the user selects a new value
 targetCurrency?.addEventListener("change", getConversionRates);
+
+
+// A global variable that references the HTML input element 
+const input = document.querySelector("input") as HTMLInputElement;
+
+
+//Add an event listener to the input element that invokes the getConversionRates function when the user gives a new value
+input?.addEventListener("change", getConversionRates);
+
+
 // A function that performs the currency conversion and updates the UI
 // Iterate over the rates array and find the rate that matches the target currency value
 // If the currency name matches the target currency value
 // Assign the conversion rate to the textContent property of the result element, which displays it on the web page
 function getConversionRates() {
-  let firstCoin = baseCurrency?.value;
-  let secondCoin = targetCurrency?.value;
-  let result = conversionRates[secondCoin] / conversionRates[firstCoin];
+  const firstCoin = baseCurrency?.value;
+  const secondCoin = targetCurrency?.value;
+  const givenInput= Number(input?.value);
+  const result = givenInput * conversionRates[secondCoin] / conversionRates[firstCoin];
   conversionResult.textContent = String(result);
 }
-
